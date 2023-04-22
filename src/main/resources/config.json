@@ -1,0 +1,21 @@
+{
+  "topgg": {
+    "botToken": "BOT_TOKEN_HERE",
+    "botId": "BOT_ID_HERE",
+
+    "webhook": {
+      "enabled": false,
+      "port": 8080,
+      "path": "/topgg-webhook",
+      "authorization": "foobazz"
+    },
+
+    "presenceActivity": {
+      "enabled": false,
+      "voteCacheUpdateIntervalMillis": 1800000,
+      "activities": [
+        "Bot's top.gg votes: {votes}"
+      ]
+    }
+  }
+}

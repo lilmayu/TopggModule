@@ -1,0 +1,9 @@
+{
+  "name": "Top.gg Module",
+  "version": "1.0",
+  "author": "Mayuna",
+  "mainClass": "dev.mayuna.topggmodule.TopGGModule",
+  "exceptionHandlingPackages": [
+    "topggmodule"
+  ]
+}
