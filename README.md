@@ -4,7 +4,7 @@ This module can update [top.gg](https://top.gg/) bot stats and listen for new us
 ## Installation
 1. Drop module's jar into `/modules/` folder
 2. Create folder `Top.gg Module` in `/modules/` folder
-3. Copy default config from [code source](resources/config.json) to `/modules/Top.gg Module` folder
+3. Copy default config from [code source](src/main/resources/config.json) to `/modules/Top.gg Module` folder
 4. Change config to your liking (set bot token from bot's top.gg management panel, bot id, etc.)
 5. Start Module Discord Bot
 
