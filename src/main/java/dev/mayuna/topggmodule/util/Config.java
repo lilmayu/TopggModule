@@ -34,6 +34,14 @@ public class Config {
 
         private @Getter Webhook webhook = new Webhook();
         private @Getter PresenceActivity presenceActivity = new PresenceActivity();
+        private @Getter Updates updates = new Updates();
+
+        public static class Updates {
+
+            private @Getter long startupDelayMillis = 60000;
+            private @Getter long updateIntervalMillis = 3600000;
+            private @Getter boolean updateShardCount = true;
+        }
 
         public static class Webhook {
 

@@ -2,6 +2,11 @@
   "topgg": {
     "botToken": "BOT_TOKEN_HERE",
     "botId": "BOT_ID_HERE",
+    "updates": {
+      "startupDelayMillis": 60000,
+      "updateIntervalMillis": 3600000,
+      "updateShardCount": true
+    },
 
     "webhook": {
       "enabled": false,

@@ -2,6 +2,7 @@ package dev.mayuna.topggmodule;
 
 import dev.mayuna.modularbot.logging.MayuLogger;
 import dev.mayuna.modularbot.objects.Module;
+import dev.mayuna.topggmodule.managers.TopGGManager;
 import dev.mayuna.topggmodule.util.Config;
 import dev.mayuna.topggmodule.util.PresenceActivityLoader;
 import dev.mayuna.topggmodule.webhook.WebhookConsumer;
@@ -18,6 +19,8 @@ public class TopGGModule extends Module {
     private static @Getter Config config;
 
     private static @Getter TopGGAPI topGGAPI;
+
+    private static @Getter TopGGManager topGGManager;
 
     @Override
     public void onLoad() {
@@ -41,6 +44,9 @@ public class TopGGModule extends Module {
         loadTopGGApi();
 
         loadPresenceActivities();
+
+        log.info("Loading managers...");
+        loadManagers();
 
         log.info("Loading done. Took " + (System.currentTimeMillis() - start) + "ms");
     }
@@ -91,5 +97,10 @@ public class TopGGModule extends Module {
             log.info("Top.gg presence activities are enabled");
             PresenceActivityLoader.load();
         }
+    }
+
+    private void loadManagers() {
+        topGGManager = new TopGGManager();
+        topGGManager.start();
     }
 }
