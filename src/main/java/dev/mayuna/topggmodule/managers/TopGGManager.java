@@ -55,7 +55,7 @@ public class TopGGManager {
             shardCount = shardManager.getShardsTotal();
         }
 
-        logger.info(getUpdateLogMessage(serverCount, shardCount));
+        logger.mdebug(getUpdateLogMessage(serverCount, shardCount));
 
         sendUpdateBotStatsRequest(serverCount, shardCount);
     }
@@ -75,7 +75,7 @@ public class TopGGManager {
                 return;
             }
 
-            TopGGModule.getLog().success("Top.gg stats has been updated.");
+            TopGGModule.getLog().mdebug("Top.gg stats has been updated.");
         });
     }
 

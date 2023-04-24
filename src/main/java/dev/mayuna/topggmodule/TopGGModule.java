@@ -1,5 +1,7 @@
 package dev.mayuna.topggmodule;
 
+import com.google.common.eventbus.AsyncEventBus;
+import com.google.common.eventbus.EventBus;
 import dev.mayuna.modularbot.logging.MayuLogger;
 import dev.mayuna.modularbot.objects.Module;
 import dev.mayuna.topggmodule.managers.TopGGManager;
@@ -11,6 +13,8 @@ import lombok.Getter;
 import lombok.NonNull;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 
+import java.util.concurrent.Executors;
+
 public class TopGGModule extends Module {
 
     private static @Getter TopGGModule instance;
@@ -21,6 +25,8 @@ public class TopGGModule extends Module {
     private static @Getter TopGGAPI topGGAPI;
 
     private static @Getter TopGGManager topGGManager;
+
+    private static @Getter EventBus eventBus;
 
     @Override
     public void onLoad() {
@@ -39,6 +45,9 @@ public class TopGGModule extends Module {
 
         log.info("Loading configuration...");
         loadConfiguration();
+
+        log.info("Initializing event bus...");
+        initEventBus();
 
         log.info("Loading top.gg API...");
         loadTopGGApi();
@@ -78,6 +87,10 @@ public class TopGGModule extends Module {
     private void loadConfiguration() {
         config = new Config();
         config.load();
+    }
+
+    private void initEventBus() {
+        eventBus = new EventBus(this.getClass().getName());
     }
 
     private void loadTopGGApi() {

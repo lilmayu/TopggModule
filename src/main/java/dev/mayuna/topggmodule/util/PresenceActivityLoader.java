@@ -43,7 +43,7 @@ public class PresenceActivityLoader {
         long updateInterval = TopGGModule.getConfig().getTopgg().getPresenceActivity().getVoteCacheUpdateIntervalMillis();
 
         if (lastVotesCacheUpdate + updateInterval <= System.currentTimeMillis()) {
-            TopGGModule.getLog().info("Fetching vote count...");
+            TopGGModule.getLog().mdebug("Fetching vote count...");
 
             lastVotesCacheUpdate = System.currentTimeMillis();
 
